@@ -4,4 +4,3 @@
 
 # Bootcamp - Web Development - SatellaSoft
 
-Exercise for training basic git commands
