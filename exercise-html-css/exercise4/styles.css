@@ -1,0 +1,35 @@
+:root {
+	--red-light: #ff4d4d;
+	--green-light: #00ff55;
+	--blue-light: #2e5fff;
+	--pink-light: #ff57b9;
+	--orange: #ff5e00;
+	--purple-light: #ee70ff;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+a {
+	color: #dd3232;
+}
+
+.red {
+	color: var(--red-light);
+}
+.green {
+	color: var(--green-light);
+}
+.blue {
+	color: var(--blue-light);
+}
+.pink {
+	color: var(--pink-light);
+}
+.orange {
+	color: var(--orange);
+}
+.purple {
+	color: var(--purple-light);
+}
