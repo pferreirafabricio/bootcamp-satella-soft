@@ -16,6 +16,10 @@ body {
     max-width: 1200px;
 }
 
+.text-bold {
+    font-weight: 700;
+}
+
 
 /* Header */
 
@@ -41,7 +45,6 @@ body {
 
 .menu ul li a {
     text-decoration: none;
-    font-weight: 700;
     color: var(--font-color);
 }
 
@@ -82,3 +85,45 @@ body {
     text-decoration: none;
     color: #fff;
 }
+
+
+/* ============= About Page ============== .*/
+
+.content {
+    margin-top: 20px;
+}
+
+.content h2 {
+    margin-bottom: 20px;
+}
+
+.content h3 {
+    margin: 20px 0;
+}
+
+.about-image {
+    height: auto;
+    width: 240px;
+}
+
+.about-text {
+    font-size: 18px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid rgb(212, 212, 212);
+}
+
+table tr {
+    height: 32px;
+}
+
+.total-salary {}
