@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="./unsemantic-grid-responsive.css">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header class="logo grid-100">
+        <figure>
+            <img src="./assets/logo.svg" alt="Logo of the site" title="Logo of the site">
+        </figure>
+
+        <nav class="menu">
+            <ul>
+                <li> <a href="index.html">Home</a> </li>
+                <li> <a href="about.html">About Us</a> </li>
+                <li> <a href="contact.html">Contact</a> </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contact">
+        <h2 class="grid-100">Contact</h2>
+        <form class="grid-80">
+            <div class="inline-group">
+                <div class="grid-50">
+                    <label for="txtName">Name</label>
+                    <input type="text" name="txtName" id="txtName">
+                </div>
+                <div class="grid-50">
+                    <label for="txtEmail">Email</label>
+                    <input type="email" name="txtEmail" id="txtEmail">
+                </div>
+            </div>
+            <div class="inline-group">
+                <div class="grid-50">
+                    <label for="txtPassword">Password</label>
+                    <input type="password" name="txtPassword" id="txtPassword">
+                </div>
+                <div class="grid-50">
+                    <label for="txtEmail">Gender</label>
+
+                    <input type="radio" name="txtMale" id="txtMale">
+                    <label class="inline-label" for="txtMale">Male</label>
+
+                    <input type="radio" name="txtFemale" id="txtFemale">
+                    <label class="inline-label" for="txtFemale">Female</label>
+                </div>
+            </div>
+            <div class="grid-50">
+                <label for="txtPassword">State</label>
+                <select name="txtPassword" id="txtPassword">
+                    <optgroup label="North">
+                        <option>São Paulo</option>
+                        <option>Rio de Janeiro</option>
+                    </optgroup>
+                    <optgroup label="South">
+                        <option>São Paulo</option>
+                        <option>Rio de Janeiro</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="grid-50"></div>
+            <div class="grid-100">
+                <label for="txtAboutYou">Tell a little about you</label>
+                <textarea name="txtAboutYou" id="txtAboutYou" rows="10"></textarea>
+            </div>
+            <button class="btn-contact">Contact</button>
+        </form>
+        <div class="grid-20 tip ">
+            <h3>Tips</h3>
+            <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+        </div>
+    </main>
+</body>
+
+</html>
