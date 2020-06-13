@@ -111,20 +111,18 @@ main {
     border-radius: 5px;
 }
 
-.register-form {
+.grid-fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 }
 
 .register-form div {
-    padding: 10px;
-}
-
-.register-form .about-you textarea {
-    grid-column: 1/2;
+    padding: 10px 10px 10px 0;
 }
 
 .register-footer {
+    grid-column: 1/2;
+    width: 100%;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -168,7 +166,7 @@ main {
         display: block;
         font-size: 24px;
     }
-    .register-form {
+    .grid-fields {
         grid-template-columns: repeat(1, 1fr);
     }
     .register-footer .errors {
