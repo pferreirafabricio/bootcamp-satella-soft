@@ -1,0 +1,182 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap');
+:root {
+    --error: #F52900;
+    --valid: #14F506;
+    --primary-color: rgb(240, 240, 240);
+    --secondary-color: #00BCD4;
+    --grey: rgb(100, 100, 100);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body,
+input,
+button {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+nav {
+    display: inline;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--grey);
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    height: 32px;
+    border: none;
+    outline: none;
+    padding-left: 5px;
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+    width: 100%;
+    outline: none;
+    padding: 5px;
+    border: none;
+}
+
+.invalid {
+    border: 1px solid var(--error);
+}
+
+.valid {
+    border: 1px solid var(--valid);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/* Header */
+
+header {
+    margin-top: 25px;
+    width: 100%;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 50%;
+    width: 100%;
+}
+
+.logo {
+    width: 80px;
+    height: auto;
+}
+
+.menu ul li {
+    margin-right: 30px;
+    display: inline;
+    list-style: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: var(--font-color);
+}
+
+
+/* Form */
+
+main {
+    margin: 50px 0;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+.register-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.register-form div {
+    padding: 10px;
+}
+
+.register-form .about-you textarea {
+    grid-column: 1/2;
+}
+
+.register-footer {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.register-footer .errors {
+    flex: 0 1 70%;
+    background-color: var(--primary-color);
+    box-shadow: 1px 0 15px rgba(0, 0, 0, 0.3);
+    height: 150px;
+    padding: 10px;
+}
+
+.register-footer button {
+    flex: 0 1 20%;
+    background-color: var(--secondary-color);
+    border: none;
+    height: 50px;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 0.8s;
+}
+
+.register-footer button:hover {
+    box-shadow: 0 0 15px var(--secondary-color);
+}
+
+@media screen and (max-width: 768px) {
+    .menu {
+        max-width: 100%;
+        width: 100%;
+    }
+    .menu ul li {
+        display: block;
+        font-size: 24px;
+    }
+    .register-form {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .register-footer .errors {
+        flex-basis: 100%;
+    }
+    .register-footer button {
+        margin-top: 20px;
+        flex-basis: 100%;
+        height: 40px;
+    }
+}
