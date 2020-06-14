@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
             aboutYou: aboutYou.value,
         }
 
-        console.log(formData);
-
         if (!validateForm(formData)) {
             event.preventDefault();
         } else {
