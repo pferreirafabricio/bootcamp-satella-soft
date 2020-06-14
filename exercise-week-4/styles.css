@@ -137,6 +137,12 @@ main {
     box-shadow: 1px 0 15px rgba(0, 0, 0, 0.3);
     height: 150px;
     padding: 10px;
+    overflow-y: scroll;
+}
+
+.register-footer .errors ul li {
+    list-style: none;
+    margin-bottom: 5px;
 }
 
 .register-footer button {
