@@ -67,6 +67,14 @@ textarea {
     margin-left: auto;
 }
 
+.error-popup {
+  display: none;
+  padding: 8px;
+  width: 400px;
+  background-color: var(--error);
+  color: #fff;
+}
+
 
 /* Header */
 

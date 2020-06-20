@@ -17,15 +17,14 @@
             <nav>
                 <ul>
                     <li> <a href="#">About Us</a> </li>
-                    <li> <a href="#">Contact</a> </li>
-                    <li> <a href="index.html">Register</a> </li>
+                    <li> <a href="index.html">Contact</a> </li>
+                    <li> <a href="#">Register</a> </li>
                 </ul>
             </nav>
         </div>
-
     </header>
     <main class="container">
-        <form action="index.php" method="POST" id="registerForm" class="register-form">
+        <form action="contact.php" method="POST" id="registerForm" class="register-form" >
             <h2>Contact Us</h2>
             <div class="grid-fields">
                 <div>
@@ -40,12 +39,12 @@
 
                 <div>
                     <label for="txtTelephone">Telephone</label>
-                    <input type="number" min="10" max="11" name="txtTelephone" id="txtTelephone">
+                    <input type="number" name="txtTelephone" id="txtTelephone">
                 </div>
 
                 <div>
-                    <label for="intSubjectOption">Subject</label>
-                    <select name="intSubjectOption" id="intSubjectOption">
+                    <label for="txtSubject">Subject</label>
+                    <select name="txtSubject" id="txtSubject">
                         <option value="1">Comercial</option>
                         <option value="2">Doubts</option>
                         <option value="3">Partnership</option>
@@ -59,12 +58,9 @@
                 <textarea name="txtMessage" id="txtMessage"></textarea>
             </div>
 
-            <div>
-                <button class="btn-submit">Enviar</button>
-            </div>
+            <button class="btn-submit" type="submit">Enviar</button>
         </form>
     </main>
-    <script src="./index.js" />
+    <script src="./index.js"></script>
     </body>
-
 </html>
