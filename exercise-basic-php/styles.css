@@ -50,6 +50,10 @@ textarea {
     border: none;
 }
 
+p {
+  margin-bottom: 20px;
+}
+
 .invalid {
     border: 1px solid var(--error);
 }
@@ -67,12 +71,8 @@ textarea {
     margin-left: auto;
 }
 
-.error-popup {
-  display: none;
-  padding: 8px;
-  width: 400px;
-  background-color: var(--error);
-  color: #fff;
+.font-weight-bold {
+  font-weight: 700;
 }
 
 
@@ -130,23 +130,41 @@ main {
     padding: 10px 10px 10px 0;
 }
 
+.btn {
+  border: none;
+  width: 160px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 1.5em;
+  cursor: pointer;
+  outline: none;
+  transition: box-shadow 0.8s;
+  border-radius: 5px;
+}
+
 .btn-submit {
     background-color: var(--secondary-color);
-    border: none;
-    float: right;
-    width: 160px;
-    height: 50px;
-    font-weight: 700;
-    font-size: 1.5em;
     color: #fff;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-    transition: box-shadow 0.8s;
 }
 
 .btn-submit:hover {
     box-shadow: 0 0 15px var(--secondary-color);
+}
+
+/* Contact checkout */
+.contact-checkout {
+  margin: 50px;
+  padding: 20px;
+  background-color: var(--primary-color);
+}
+
+.btn-back {
+  background-color: var(--valid);
+  margin-bottom: 20px;
+}
+
+.btn-back:hover {
+  box-shadow: 0 0 15px var(--valid);
 }
 
 @media screen and (max-width: 768px) {
@@ -161,12 +179,11 @@ main {
     .grid-fields {
         grid-template-columns: repeat(1, 1fr);
     }
-    .register-footer .errors {
-        flex-basis: 100%;
+    .btn {
+      width: 100%;
     }
-    .register-footer button {
-        margin-top: 20px;
-        flex-basis: 100%;
-        height: 40px;
+    .contact-checkout {
+      margin: 20px;
+      padding: 20px;
     }
 }
