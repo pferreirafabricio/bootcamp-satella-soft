@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: aliceblue;
+}
+
+.align-right {
+    text-align: right;
+}
+
+.max-width {
+    max-width: 500px;
+    width: 100%;
+    padding: 10px;
+    background-color: #FFF;
+    border: 2px solid #111;
+    margin-top: 10%;
+}
+
+.ar {
+    text-align: right;
+}
+
+input[type='text'],
+input[type='email'] {
+    padding: 5px;
+    margin: 5px 0;
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+a {
+    color: rgb(5, 150, 218);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(218, 5, 5);
+    text-decoration: none;
+}
+
+.btn {
+    background-color: rgb(5, 150, 218);
+    color: #fff;
+    padding:5px;
+    border:none;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.btn:hover {
+    background-color: rgb(218, 5, 5);
+}

@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap');
+
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.center{
+    text-align: center;
+}
+
+.max-width {
+    max-width: 1000px;
+    width: 100%;
+}
+
+.box {
+    background-color: rgb(236, 241, 245);
+    margin-top: 10px;
+}
+
+.box-header {
+    background-color: rgb(66, 86, 102);
+    padding: 5px;
+    color: white;
+}
+
+.box-body {
+    padding: 10px;
+}
+
+header {
+    background-color: rgb(66, 86, 102);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a{
+    display: inline-block;
+    padding: 20px;
+    color: rgb(232, 241, 243);
+    text-decoration: none;   
+}
+
+nav ul li a:hover{
+    background-color: rgb(236, 241, 245);
+    color: rgb(66, 86, 102);
+}
+
+nav ul li:last-child > a{
+    color: rgb(206, 90, 90);
+    float: right;
+}
+
+nav ul li:first-child > a{
+    color: rgb(0, 183, 255);
+    font-weight: bold;
+}
+
+.saldo{
+    padding: 25px 0;
+    font-size: 3em;
+}

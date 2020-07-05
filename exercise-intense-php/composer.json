@@ -1,0 +1,17 @@
+{
+    "name": "gunna/banco-online",
+    "authors": [
+        {
+            "name": "SatellaSoft",
+            "email": "satellasoft@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}
