@@ -1,10 +1,10 @@
 <?php
 
 //Pasta na qual o projeto está hospedado
-define('BASE', '/banco-online-php/');
+define('BASE', '/');
 
 //Pasta onde os arquivos vão ser salvos
-define('DATA_PATH', 'dados');
+define('DATA_PATH', 'data');
 
 //?url=saldo
 //'URL' => 'Controladora@Método'

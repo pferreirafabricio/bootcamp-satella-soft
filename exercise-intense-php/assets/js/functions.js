@@ -33,3 +33,59 @@ function validaCPF(cpf) {
     else
         return false;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  let valid = false;
+
+  const elBtnCreateAccount = document.getElementById('btnCreateAccount');
+  const elForm = document.forms['frmRegistro'];
+  const elCpf = elForm['txtCpf'];
+  const elName = elForm['txtNome'];
+  const elEmail = elForm['txtEmail'];
+  const elDateBirth = elForm['txtNascimento'];
+
+  // Regex
+  const nameRegex = /([a-zA-Z]){2,60}/;
+
+  elForm.addEventListener('submit', (event) => {
+
+    const fields = {
+      cpf: elCpf.value,
+      name: elName.value,
+      email: elEmail.value,
+      dateBirth: elDateBirth.value,
+    };
+    event.preventDefault();
+
+    if (validateFields(fields)) {
+      console.log('Valid');
+    } else {
+      console.log('Not valid');
+    }
+  });
+
+  function validateFields({ cpf, name, email, dateBirth }) {
+    if (validaCPF(cpf)) {
+      elCpf.classList.add('valid');
+      valid = true;
+    } else {
+      elCpf.classList.remove('valid');
+      elCpf.classList.add('invalid');
+      valid = false;
+    }
+
+    if (nameRegex.test(name)) {
+      elName.classList.add('valid');
+      console.log('my name' + name);
+      valid = true;
+    } else {
+      elName.classList.remove('valid');
+      elName.classList.add('invalid');
+      valid = false;
+    }
+
+    return valid;
+  }
+
+});

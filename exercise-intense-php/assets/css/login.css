@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,700;1,400&display=swap');
+:root {
+  --error: rgb(218, 5, 5);
+  --valid: rgb(44, 190, 0);
+}
 
 * {
     margin: 0 auto;
@@ -14,6 +18,14 @@ body {
 
 .align-right {
     text-align: right;
+}
+
+.invalid {
+  border: 1px solid var(--error) !important;
+}
+
+.valid {
+  border: 1px solid var(--valid) !important;
 }
 
 .max-width {
@@ -43,7 +55,7 @@ a {
 }
 
 a:hover {
-    color: rgb(218, 5, 5);
+    color: var(--error);
     text-decoration: none;
 }
 
@@ -57,5 +69,5 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: rgb(218, 5, 5);
+    background-color: var(--error);
 }
