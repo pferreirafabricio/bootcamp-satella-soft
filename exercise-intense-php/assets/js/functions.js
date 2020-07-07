@@ -47,6 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Regex
   const nameRegex = /([a-zA-Z]){2,60}/;
+  const emailRegex = /([a-zA-Z]){6,80}\@([a-z]){2,14}\.([a-z]){2,6}/;
+  const dateBirthRegex = /0[1-9]|1[0-9]|2[0-9]|3[0-1]\/0[1-9]|1[1-2]\/\d\d\d\d/;
 
   elForm.addEventListener('submit', (event) => {
 
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       dateBirth: elDateBirth.value,
     };
     event.preventDefault();
-
+    console.log(fields.dateBirth);
     if (validateFields(fields)) {
       console.log('Valid');
     } else {
@@ -77,7 +79,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (nameRegex.test(name)) {
       elName.classList.add('valid');
-      console.log('my name' + name);
       valid = true;
     } else {
       elName.classList.remove('valid');
@@ -85,7 +86,25 @@ document.addEventListener('DOMContentLoaded', () => {
       valid = false;
     }
 
-    return valid;
+    if (emailRegex.test(email)) {
+      elEmail.classList.add('valid');
+      valid = true;
+    } else {
+      elEmail.classList.remove('valid');
+      elEmail.classList.add('invalid');
+      valid = false;
+    }
+
+    if (dateBirthRegex.test(dateBirth)) {
+      elDateBirth.classList.add('valid');
+      valid = true;
+    } else {
+      elDateBirth.classList.remove('valid');
+      elDateBirth.classList.add('invalid');
+      valid = false;
+    }
+
+    //return valid;
   }
 
 });
