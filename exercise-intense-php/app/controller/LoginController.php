@@ -47,7 +47,6 @@ class loginController extends Controller
             'nascimento' => filter_input(INPUT_POST, 'txtNascimento', FILTER_SANITIZE_STRING)
         ];
 
-        //dd($formData);
         if (!$this->validate($formData)) {
             //Exibir mensagem, cria tela...
             return;

@@ -1,3 +1,4 @@
+/* eslint-disable dot-notation */
 import {
   validaCPF,
   validateName,
@@ -7,14 +8,14 @@ import {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Const variables
-  let valid = false;
+  let valid = true;
 
   // All HTML elements
-  const elForm = document.forms.frmRegistro;
-  const elCpf = elForm.txtCpf;
-  const elName = elForm.txtNome;
-  const elEmail = elForm.txtEmail;
-  const elDateBirth = elForm.txtNascimento;
+  const elForm = document.forms['frmRegistro'];
+  const elCpf = elForm['txtCpf'];
+  const elName = elForm['txtNome'];
+  const elEmail = elForm['txtEmail'];
+  const elDateBirth = elForm['txtNascimento'];
 
   function validateFields({
     cpf,
@@ -24,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
   }) {
     if (validaCPF(cpf)) {
       elCpf.classList.add('valid');
-      valid = true;
     } else {
       elCpf.classList.remove('valid');
       elCpf.classList.add('invalid');
@@ -33,7 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (validateName(name)) {
       elName.classList.add('valid');
-      valid = true;
     } else {
       elName.classList.remove('valid');
       elName.classList.add('invalid');
@@ -42,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (validateEmail(email)) {
       elEmail.classList.add('valid');
-      valid = true;
     } else {
       elEmail.classList.remove('valid');
       elEmail.classList.add('invalid');
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (validateDateBirth(dateBirth)) {
       elDateBirth.classList.add('valid');
-      valid = true;
     } else {
       elDateBirth.classList.remove('valid');
       elDateBirth.classList.add('invalid');
@@ -63,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   elForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    valid = true;
 
     const fields = {
       cpf: elCpf.value,
