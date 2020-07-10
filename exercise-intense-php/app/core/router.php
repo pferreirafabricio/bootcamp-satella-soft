@@ -1,25 +1,24 @@
 <?php
-$url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_STRING);
+$action = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_STRING);
 
-$controller = 'LoginController';
-$metodo = 'login';
+$defaultController = 'LoginController';
+$defaultMethod = 'login';
 
-if ($url == null || !$url) {
-
-    $con = 'app\\controller\\' . $controller;
-
-    call_user_func_array([new $con, $metodo], []);
-
+if ($action === null || !$action) {
+    $controllerPath = 'app\\controller\\' . $defaultController;
+    call_user_func_array([new $controllerPath, $defaultMethod], []);
     return;
 }
 
 foreach ($router as $key => $value) {
-    if ($key == $url) {
-        $ex = explode('@', $value);
+    if ($key == $action) {
+        $controller = explode('@', $value);
+        $controllerClass =  $controller[0];
+        $controllerMethod = $controller[1];
 
-        $con = 'app\\controller\\' . $ex[0];
+        $controllerPath = 'app\\controller\\' . $controllerClass;
         
-        call_user_func_array([new $con, $ex[1]], []);
-    break;
+        call_user_func_array([new $controllerPath, $controllerMethod], []);
+        break;
     }
 }

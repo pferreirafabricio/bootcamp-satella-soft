@@ -1,13 +1,8 @@
 <?php
-
-//Pasta na qual o projeto está hospedado
 define('BASE', '/');
 
-//Pasta onde os arquivos vão ser salvos
 define('DATA_PATH', 'data');
 
-//?url=saldo
-//'URL' => 'Controladora@Método'
 $router = [
     //View
     'home' => 'ContaController@home',
