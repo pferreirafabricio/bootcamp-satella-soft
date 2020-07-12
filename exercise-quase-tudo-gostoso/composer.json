@@ -1,0 +1,19 @@
+{
+    "name": "pferreirafabricio/exercise-quase-tudo-gostoso",
+    "description": "A simple site of revenues",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fabricio Pinto Ferreira",
+            "email": "pferreirafabricio@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    }
+}

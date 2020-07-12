@@ -1,0 +1,4 @@
+<?php 
+
+// Const
+define('BASE', '/');
