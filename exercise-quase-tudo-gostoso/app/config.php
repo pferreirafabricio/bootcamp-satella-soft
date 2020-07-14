@@ -1,5 +1,6 @@
 <?php 
 
+date_default_timezone_set('America/Sao_Paulo');
 define('BASE', '/');
 
 define('DB_HOST', 'localhost');
@@ -8,8 +9,15 @@ define('DB_PASS', '');
 define('DB_NAME', 'qt-gostoso');
 
 $router = [
-    'home' => 'RevenueController@index',
+    // Views
+    'home' => 'RouterController@indexRevenues',
+    'criar' => 'RouterController@createRevenue',
+    'editar' => 'RouterController@updateRevenue',
+    'ver' => 'RouterController@showRevenue',
+    // Revenue
+    'index' => 'RevenueController@index',
+    'show' => 'RevenueController@show',
     'create' => 'RevenueController@create',
     'update' => 'RevenueController@update',
-    'show' => 'RevenueController@show',
+    'delete' => 'RevenueController@delete',
 ];

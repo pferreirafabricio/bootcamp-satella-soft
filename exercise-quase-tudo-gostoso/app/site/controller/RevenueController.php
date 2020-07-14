@@ -2,16 +2,16 @@
 
 namespace app\site\controller;
 
-class RevenueController 
+class RevenueController
 {
     public function __construct()
     {
-        echo "fala dev";
+        echo "construct";
     }
 
     public function index()
     {
-        dd('Index');
+        dd('index');
     }
 
     public function show()
@@ -21,16 +21,16 @@ class RevenueController
 
     public function create()
     {
-
+        dd('create');
     }
 
     public function update()
     {
-
+        dd('update');
     }
 
     public function delete()
     {
-
+        dd('delete');
     }
 }
