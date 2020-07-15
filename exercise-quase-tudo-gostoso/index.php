@@ -1,5 +1,5 @@
-<?php 
-require_once('app/config.php');
-require_once('app/functions/functions.php');
+<?php
+require_once('app/config/config.php');
+require_once('app/function/functions.php');
 require_once('vendor/autoload.php');
-require_once('app/core/Router.php');
+require('app/core/Router.php');

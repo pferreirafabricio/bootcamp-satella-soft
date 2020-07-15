@@ -1,8 +1,14 @@
 {% extends 'partials/body.twig.php' %}
 
+{% block title %}Resultado da busca{% endblock %}
+
 {% block body %}
-<div class="max-width">
-    <h1>HOME</h1>
+<div class="max-width mt-3">
+    <h1>Resultado da busca</h1>
+
+    <hr>
+
+    <p>Exibindo <span class="font-weight-bold">{{totalResultado}}</span> resultado(s).</p>
 
     {% for receita in receitas %}
     <div class="row">
@@ -22,6 +28,7 @@
 
     </div>
     {% endfor %}
-    
+</div>
+
 </div>
 {% endblock %}

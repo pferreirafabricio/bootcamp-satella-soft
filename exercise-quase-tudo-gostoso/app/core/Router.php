@@ -1,22 +1,24 @@
-<?php 
+<?php
 
-$param = get('url');
+$req = get('url');
 
-$controllerName = "RevenueController";
-$controllerMethod = "index";
+$controller = 'HomeController';
+$metodo = 'index';
+
 
 foreach ($router as $key => $value) {
-    if ($key === $param) {
-        $controller = explode('@', $value);
-        $controllerName = $controller[0];
-        $controllerMethod = $controller[1];
+    if ($req == $key) {
+        $ex = explode('@', $value);
+
+        $controller = $ex[0];
+        $metodo = $ex[1];
         break;
     }
 }
 
-$controller = 'app\\site\\controller\\'. $controllerName;
+$cont = 'app\\site\\controller\\' . $controller;
 
 call_user_func([
-    new $controller(),
-    $controllerMethod
-],[]);
+    new $cont(),
+    $metodo
+], []);
