@@ -13,7 +13,7 @@
                 <div class="card-header" style="width:100%;">{{item.titulo}}</div>
                 <div class="card-body">
                     <p class="card-text">{{item.dataPublicacao | date(DATE_TIME) }}</p>
-
+                    <img src="{{BASE}}resources/{{item.thumb}}" alt="Thumb da receita">
                     <a href="{{BASE}}?url=ver&id={{item.id}}" class="btn btn-outline-info w-100">Visualizar</a>
                 </div>
             </div>

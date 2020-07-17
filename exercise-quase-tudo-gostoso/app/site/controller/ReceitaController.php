@@ -79,16 +79,23 @@ class ReceitaController extends Controller
 
     public function insert()
     {
-        $receita = $this->getInput();
+        $file = $_FILES['thumb'];
+        $fileExtension = mb_strstr($file['name'], '.') ;
+        
+        $newFilename = md5(uniqid()) . $fileExtension;
 
-        $result = $this->receitaModel->insert($receita);
 
-        if ($result <= 0) {
-            $this->showMessage('Erro', 'Houve um erro ao tentar cadastrar, tente novamente mais tarde.');
-            return;
+        if (move_uploaded_file($file['tmp_name'], LOCAL_DIR . BASE . "resources/{$newFilename}")) {
+            $receita = $this->getInput($newFilename);
+            $result = $this->receitaModel->insert($receita);
+
+            if ($result <= 0) {
+                $this->showMessage('Erro', 'Houve um erro ao tentar cadastrar, tente novamente mais tarde.');
+                return;
+            }
+
+            redirect(BASE . '?url=editar&id=' . $result);
         }
-
-        redirect(BASE . '?url=editar&id=' . $result);
     }
 
     public function delete()
@@ -115,13 +122,13 @@ class ReceitaController extends Controller
         redirect(BASE . '?url=editar&id=' . get('id'));
     }
 
-    private function getInput()
+    private function getInput($filename)
     {
         return new Receita(
             get('id'),
             post('txtTitulo'),
             post('txtConteudo', FILTER_SANITIZE_SPECIAL_CHARS),
-            null,
+            $filename,
             post('txtTags'),
             getCurrentDate()
         );

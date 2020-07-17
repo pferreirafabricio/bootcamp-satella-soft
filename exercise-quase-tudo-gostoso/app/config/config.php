@@ -1,8 +1,9 @@
 <?php
 date_default_timezone_set('America/Sao_Paulo');
 
-define('BASE', '/');
-define('HOST', 'http://localhost/quase-tudo-gostoso/');
+define('LOCAL_DIR', 'C:/xampp/htdocs');
+define('BASE', '/bootcamp-satellaSoft/exercise-quase-tudo-gostoso/');
+define('HOST', 'http://localhost/bootcamp-satellaSoft/exercise-quase-tudo-gostoso/');
 
 define('DATE_TIME', 'd/m/Y H:i:s');
 

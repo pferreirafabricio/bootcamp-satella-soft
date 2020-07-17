@@ -8,7 +8,7 @@
 
     <hr>
     
-    <form action="{{BASE}}?url=insert" method="post" id="frmNovaReceita">
+    <form action="{{BASE}}?url=insert" method="post" id="frmNovaReceita" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
@@ -25,6 +25,15 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="thumb">Thumb</label>
+                    <input type="file" accept=".png, .jpg, .jpeg" class="form-control" id="thumb" name="thumb"></input>
+                </div>
+            </div>
+        </div>
+    
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group">
