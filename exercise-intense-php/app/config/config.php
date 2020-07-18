@@ -1,5 +1,5 @@
 <?php
-define('BASE', '/');
+define('BASE', '/bootcamp-satellaSoft/exercise-intense-php/');
 
 define('DATA_PATH', 'data');
 

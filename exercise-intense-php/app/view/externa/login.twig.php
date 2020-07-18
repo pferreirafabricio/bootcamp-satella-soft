@@ -3,11 +3,12 @@
 {% block body %}
 <div class="main-container">
     <div class="max-width vertical-center">
-        <form action="{{BASE}}?url=auth" method="post">
+        <form id="frmLogin" action="{{BASE}}?url=auth" method="post">
             <p>Informe seu CPF para continuar</p>
             <input type="text" name="txtCpf" id="txtCpf">
-            <div class="ar">
-                <a href="{{BASE}}?url=cadastro">Criar conta</a>
+            <div>
+                <button class="btn" type="submit">Entrar</button>
+                <a style="margin-left: auto;" href="{{BASE}}?url=cadastro">Criar conta</a>
             </div>
         </form>
     </div>
