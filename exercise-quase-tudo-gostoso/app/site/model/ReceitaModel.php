@@ -45,6 +45,17 @@ class ReceitaModel
         return $this->pdo->ExecuteNonQuery($sql, $params);
     }
 
+    public function updateThumb(Receita $receita)
+    {
+        $sql = 'UPDATE receita SET thumb = :thumb WHERE id = :id';
+        $params = [
+            ':id' => $receita->getId(),
+            ':thumb' => $receita->getThumb()
+        ];
+
+        return $this->pdo->ExecuteNonQuery($sql, $params);
+    }
+
     public function delete(int $id)
     {
         $sql = 'DELETE FROM receita WHERE id = :id';
@@ -71,7 +82,7 @@ class ReceitaModel
     {
         $termo = strtolower($termo);
 
-        $sql = 'SELECT id, titulo, data_publicacao FROM receita WHERE LOWER(tags) LIKE :tags OR LOWER(titulo) LIKE :titulo';
+        $sql = 'SELECT id, titulo, thumb, data_publicacao FROM receita WHERE LOWER(tags) LIKE :tags OR LOWER(titulo) LIKE :titulo';
        
         $params = [
             ':tags' => "%{$termo}%",
@@ -90,7 +101,7 @@ class ReceitaModel
     public function readLasts(int $quantidade = 20)
     {
 
-        $sql = 'SELECT id, titulo, data_publicacao FROM receita ORDER BY data_publicacao DESC LIMIT :limit';
+        $sql = 'SELECT id, titulo, thumb, data_publicacao FROM receita ORDER BY data_publicacao DESC LIMIT :limit';
        
         $params = [
             ':limit' => $quantidade

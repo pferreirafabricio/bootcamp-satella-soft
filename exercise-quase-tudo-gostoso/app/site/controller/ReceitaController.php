@@ -57,6 +57,14 @@ class ReceitaController extends Controller
         ]);
     }
 
+    public function editarThumb()
+    {
+        $idReceita = get('id', FILTER_SANITIZE_NUMBER_INT);
+        $this->view('receita/editarThumb', [
+            'receita' => $this->receitaModel->readById($idReceita),
+        ]);
+    }
+
     public function busca()
     {
         $termo = strtolower(get('termo'));
@@ -102,10 +110,15 @@ class ReceitaController extends Controller
     {
         $id = get('id', FILTER_SANITIZE_NUMBER_INT);
 
+        $receita = $this->receitaModel->readById($id);
+        $thumb = $receita->getThumb();
+
         if (!$this->receitaModel->delete($id)) {
             $this->showMessage('Erro', 'Houve um erro ao tentar deletar, tente novamente mais tarde.');
             return;
         }
+
+        unlink(LOCAL_DIR . BASE . 'resources/' . $thumb);
 
         redirect(BASE);
     }
@@ -122,7 +135,32 @@ class ReceitaController extends Controller
         redirect(BASE . '?url=editar&id=' . get('id'));
     }
 
-    private function getInput($filename)
+    public function updateThumb()
+    {
+        $id = get('id', FILTER_SANITIZE_NUMBER_INT);
+        $file = $_FILES['thumb'];
+        $fileExtension = mb_strstr($file['name'], '.');
+
+        $newFilename = md5(uniqid()) . $fileExtension;
+
+        $receita = $this->getInput($newFilename);
+
+        // Pega o nome da thumb antiga para poder apagá-la depois
+        $oldThumb = $this->receitaModel->readById($id)->getThumb();
+        
+        if (move_uploaded_file($file['tmp_name'], LOCAL_DIR . BASE . 'resources/' . $newFilename)) {
+            if (!$this->receitaModel->updateThumb($receita)) {
+                $this->showMessage('Erro', 'Houve um erro ao tentar cadastrar, tente novamente mais tarde.');
+                return;
+            }
+
+            unlink(LOCAL_DIR . BASE . 'resources/' . $oldThumb);
+
+            redirect(BASE . '?url=editarThumb&id=' . get('id'));
+        }
+    }
+
+    private function getInput($filename = null)
     {
         return new Receita(
             get('id'),

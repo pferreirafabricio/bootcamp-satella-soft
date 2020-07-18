@@ -12,9 +12,17 @@
 
 
     <a href="{{BASE}}?url=editar&id={{receita.id}}" class="btn btn-sm btn-warning">Editar</a>
+    <a href="{{BASE}}?url=editarThumb&id={{receita.id}}" class="btn btn-sm btn-success">Editar Thumb</a>
     <a href="{{BASE}}?url=delete&id={{receita.id}}" class="btn btn-sm btn-danger" onclick="return confirm('Deseja realmente deletar?')">Delete</a>
-
     <hr>
+
+    <img
+        class="img-fluid"
+        src="{{BASE}}resources/{{receita.thumb}}" 
+        alt="Thumb da receita"
+    >
+    <hr>
+
 
     <div id="dvConteudoReceita">
         {{ receita.conteudo | raw }}
