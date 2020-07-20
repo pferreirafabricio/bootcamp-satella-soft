@@ -1,4 +1,5 @@
 <?php
+define('ROOT', 'C:/xampp/htdocs');
 define('BASE', '/bootcamp-satellaSoft/exercise-intense-php/');
 
 define('DATA_PATH', 'data');

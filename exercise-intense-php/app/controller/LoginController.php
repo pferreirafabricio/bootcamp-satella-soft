@@ -26,18 +26,19 @@ class loginController extends Controller
     public function auth()
     {
         $cpf = $_POST['txtCpf'];
+        $path = ROOT . BASE . DATA_PATH . '/' . trataCPF($cpf);
 
-        if (!file_exists(DATA_PATH . '/' . trataCPF($cpf))) {
+        if (!file_exists($path)) {
             $this->view('externa/error', [
                 'message' => 'Ooops! Esse CPF não existe em nossa base de dados.'
             ]);
         }
-
-        // session_start();
-        // $_SESSION['logado'] = true;
-        // $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
-        // setcookie('user_name', 'USER_NAME', time() + 3600, '/');
-        // header('Location: ' . BASE . '?url=home');
+        
+        session_start();
+        $_SESSION['logado'] = true;
+        $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+        setcookie('user_name', 'Diego', time() + 3600, '/');
+        header('Location: ' . BASE . '?url=home');
     }
 
     public function register()

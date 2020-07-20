@@ -116,6 +116,8 @@ function criarDiretorio(string $path)
  */
 function security()
 {
+    session_start();
+    // dd($_SESSION);
     if (!isset($_SESSION['logado']) || !$_SESSION['logado']) {
         header('Location: ' . BASE);
     }
