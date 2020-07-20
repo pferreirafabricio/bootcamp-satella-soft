@@ -37,4 +37,7 @@
         </form>
     </div>
 </div>
+{% block script %} 
+    <script type="module" src="{{BASE}}assets/js/register.js"></script> 
+{% endblock %}
 {% endblock %}

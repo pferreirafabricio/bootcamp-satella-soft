@@ -13,4 +13,7 @@
         </form>
     </div>
 </div>
+{% block script %} 
+    <script type="module" src="{{BASE}}assets/js/login.js"></script> 
+{%endblock %}
 {% endblock %}
