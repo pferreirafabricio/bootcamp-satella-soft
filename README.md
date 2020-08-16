@@ -9,6 +9,8 @@
 # Overview
 The Bootcamp - Web Development program, focuses on training professionals to work in the day-to-day construction of WEB applications. Classes will start from the basics, explaining how to create static pages with HTML and CSS, followed by Javascript and ECMA6. Starting from basic to intermediate in the technologies presented.
 
+__Checkout the final project of the bootcamp [here](https://github.com/pferreirafabricio/php-socialSebo).__
+
 ## :bricks: Technologies and tools used in the bootcamp: 
 - [PHP](https://www.php.net)
 - [Twig](https://twig.symfony.com)
