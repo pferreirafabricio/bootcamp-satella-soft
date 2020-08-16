@@ -20,12 +20,6 @@ The Bootcamp - Web Development program, focuses on training professionals to wor
 - [ESLint](https://eslint.org)
 - [Unsemantic](https://unsemantic.com)
 
-## :running_man: Installing and Running  
- 1. Clone this repository ```git clone https://github.com/pferreirafabricio/php-socialSebo.git```;
- 2. Enter in the project's folder: ```cd php-socialSebo```
- 3. Install all project's dependencies: ```$ composer install```
- 6. Finally run the apache server and access ```http://localhost``` 😃
- 
 ## :recycle: Contribute
  1. Fork this repository;
  2. Create a branch with your feature: ```git checkout -b my-feature```
