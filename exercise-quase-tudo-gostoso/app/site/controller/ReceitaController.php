@@ -91,9 +91,9 @@ class ReceitaController extends Controller
         $fileExtension = mb_strstr($file['name'], '.') ;
         
         $newFilename = md5(uniqid()) . $fileExtension;
+        $fullPath = PUBLIC_IMAGE_PATH . $newFilename;
 
-
-        if (move_uploaded_file($file['tmp_name'], LOCAL_DIR . BASE . "resources/{$newFilename}")) {
+        if (move_uploaded_file($file['tmp_name'], $fullPath)) {
             $receita = $this->getInput($newFilename);
             $result = $this->receitaModel->insert($receita);
 
@@ -118,7 +118,7 @@ class ReceitaController extends Controller
             return;
         }
 
-        unlink(LOCAL_DIR . BASE . 'resources/' . $thumb);
+        unlink(PUBLIC_IMAGE_PATH . $thumb);
 
         redirect(BASE);
     }
